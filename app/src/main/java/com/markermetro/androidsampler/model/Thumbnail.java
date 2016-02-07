@@ -2,9 +2,6 @@ package com.markermetro.androidsampler.model;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by kevin on 5/02/16.
- */
 public class Thumbnail {
 
     @SerializedName("path")
@@ -30,6 +27,9 @@ public class Thumbnail {
     }
 
     public String getThumbnailURL() {
+        if (extension.isEmpty()) {
+            return path;
+        }
         return path + "." + extension;
     }
 }
