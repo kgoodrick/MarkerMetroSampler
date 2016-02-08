@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new GsonBuilder().create();
         Characters characters = gson.fromJson(characterJson, Characters.class);
 
+        // setup adapter and bind it to the ListView
         CharactersAdapter charactersAdapter = new CharactersAdapter(this, characters.getData().getCharacters());
         mCharactersList.setAdapter(charactersAdapter);
 
